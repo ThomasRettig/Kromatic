@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Kromatic</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="white lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" style="color: black;">Kromatic</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="row center"><img class="center" src="./static/drawkit-drawing-man-monochrome-400px.png" style="align-items: center;"></div>
+      
+      <h1 class="header center black-text">Turn mono-chromatic into magic</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Transform B/W or Grayscale to color using Generative Adverserial Networks</h5>
+        <p class="center">Made with <i class="tiny material-icons">favorite_border</i> & <i class="tiny material-icons">sentiment_very_satisfied </i> by Ankit Sridhar</p>
+      </div>
+      <div class="row center">
+        <a href="./templates/io.html" id="download-button" class="btn-large waves-effect waves-light white black-text">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+      <h4 class="center">How does it work ?</h4>
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">insert_photo</i></h2>
+            <h5 class="center">Upload photos</h5>
+
+            <p class="light">Choose photos or add photos by url for processing. The image is sent to DeepAI GAN.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">layers</i></h2>
+            <h5 class="center">DeepAI image colorization model</h5>
+
+            <p class="light">A deep learning model that has been trained on pairs of color images with their grayscale counterpart. After hours of training, the models learns how to add color back to black and white images.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">format_color_fill</i></h2>
+            <h5 class="center">Get results</h5>
+
+            <p class="light">Get your colorized version of your photo back from the image colorization model. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-stacked">
+            <form action="." method="POST" class="center">
+              <p>Note : Paste URL image containing full link to the following formats - ".jpg",".png" etc. </p>
+              <p>Example - https://example.com/image.png</p>
+              <label for="url" class="center">Enter URL:</label><br>
+              <input type="text" id="url" name="url"><br>
+              <input type="submit" value="Submit" onclick="myFunction()">
+            </form> 
+            <h6 id="in" class="center"></h6>
+            <br>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+ 
+
+
+  <footer class="page-footer white">
+    <div class="footer-copyright">
+      <div class="container black-text center">
+      Follow me on <i class="fa fa-github"></i><a class="black-text text-lighten-3" href="https://github.com/ankitsridhar16"> Github</a>  <i class="fa fa-instagram"></i> <a class="black-text text-lighten-3" href="https://www.instagram.com/mr_kryp70n1c/?hl=en"> Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/js/materialize.js"></script>
+  <script src="/static/js/init.js"></script>
+  <script>
+    function myFunction() {
+      document.getElementById("in").innerHTML = "Hold on ! Processing you request ...";
+    }
+  </script>
+  </body>
+</html>
