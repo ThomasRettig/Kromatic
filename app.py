@@ -16,7 +16,7 @@ def get_value():
     data= {
         'image': {url},
     },
-    headers={'api-key': 'cd9c1094-c81b-470a-819b-84c2cc01e9fb'}
+    headers={'api-key': 'api'}
     )
     print("reached")
     
