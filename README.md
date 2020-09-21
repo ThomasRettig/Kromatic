@@ -1,2 +1,2 @@
 # Kromatic
-live - https://ankitsridhar.pythonanywhere.com
+live - https://kromatic.herokuapp.com
