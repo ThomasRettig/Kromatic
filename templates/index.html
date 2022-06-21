@@ -20,9 +20,20 @@
         <input type="text" id="url" name="url" placeholder="https://test.com/image.png" spellcheck="flase" required>
         <input type="submit" value="Submit">
       </div>
+      <button id="exampleButton" class="faux-link">Or try an example →</button>
     </form>
   </main>
   <!--Javascript-->
+  <script>
+    const exampleButton = document.getElementById("exampleButton");
+    const url = document.getElementById("url");
+    let exampleImage = "https://images.pexels.com/photos/57905/pexels-photo-57905.jpeg";
+
+    exampleButton.addEventListener("click", () => {
+      url.value = exampleImage;
+      document.forms[0].submit();
+    })
+  </script>
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"></script>
   <script src="/static/js/init.js"></script>
 </body>
