@@ -1,17 +1,131 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+:root {
+  --base-letter-spacing: -0.05px;
+}
 
-.icon-block {
-  padding: 0 15px;
+::selection {
+  background-color: hsl(203, 100%, 35%);
+  color: hsl(203, 100%, 97%);
 }
-.icon-block .material-icons {
-	font-size: inherit;
+
+body {
+  font-family: "Inter var", system-ui, sans-serif;
+  letter-spacing: var(--base-letter-spacing);
+  margin: 5vw;
 }
-body{
-  font-family: 'Shadows Into Light', cursive;
+
+h1, h2, p, figure {
+  margin: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-variation-settings: "wght" 700;
+  margin: 0;
+  letter-spacing: calc(var(--base-letter-spacing) * 10);
+}
+
+h2 {
+  font-variation-settings: "wght" 550;
+  letter-spacing: calc(var(--base-letter-spacing) * 7);
+}
+
+button, input {
+  outline: 1.5px solid #ccc;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  padding: 7px;
+  transition: 0.1s;
+}
+
+:is(button, input):focus{
+  box-shadow: 0 0 0 4px hsla(203, 100%, 46%, 0.4);
+  outline: 2px solid hsla(203, 100%, 46%, 0.3);
+  border-radius: 2px;
+}
+
+input[type="text"] {
+  background-color: hsl(0, 0%, 97%);
+  display: block;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+  user-select: none;
+}
+
+input[type="submit"] {
+  background-color: hsl(0, 0%, 90%);
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: hsl(0, 0%, 87%);
+}
+
+input[type="submit"]:focus {
+  background-color: hsl(203, 100%, 35%);
+  color: white;
+}
+
+label {
+  color: #666;
+  font-variation-settings: "wght" 500;
+  user-select: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  row-gap: 5px;
+}
+
+form > div {
+  align-items: center;
+  column-gap: 10px;
+  display: flex;
+  margin-top: 5px;
+  width: fit-content;
+}
+
+@media screen and (max-width: 749px) {
+  input[type="text"] {
+    width: 100%;
+  }
+
+  form > div {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    align-items: center;
+    align-content: center;
+    column-gap: clamp(15px, 10vw, 25px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    margin: 0 auto;
+    width: 110vmin;
+  }
+
+  h1, header > p {
+    text-align: right;
+  }
+
+  h1 {
+    font-size: clamp(40px, 10vw, 45px);
+    letter-spacing: calc(var(--base-letter-spacing) * 25);
+  }
 }
