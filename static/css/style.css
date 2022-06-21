@@ -17,7 +17,7 @@ h1, h2, p, figure {
   margin: 0;
 }
 
-p:not(:last-child) {
+p:not(:last-child, .label) {
   margin-bottom: 5px;
 }
 
@@ -71,14 +71,16 @@ input[type="submit"]:focus {
   color: white;
 }
 
-label {
+label, .label {
   color: #666;
   font-variation-settings: "wght" 500;
   user-select: none;
 }
 
-img {
-  max-width: 100%;
+figure {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 form {
@@ -97,6 +99,10 @@ form > div {
   width: fit-content;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 749px) {
   input[type="text"] {
     width: 100%;
@@ -112,7 +118,7 @@ form > div {
   body {
     align-items: center;
     align-content: center;
-    column-gap: clamp(15px, 10vw, 25px);
+    column-gap: clamp(15px, 10vw, 35px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
@@ -124,7 +130,7 @@ form > div {
     text-align: right;
   }
 
-  h1 {
+  .big {
     font-size: clamp(40px, 10vw, 45px);
     letter-spacing: calc(var(--base-letter-spacing) * 25);
   }
