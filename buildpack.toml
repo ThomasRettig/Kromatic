@@ -1,0 +1,7 @@
+[buildpack]
+name = "Python"
+
+[publish.Ignore]
+files = [
+  "requirements.txt",
+]
