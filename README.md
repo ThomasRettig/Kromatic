@@ -1,2 +1,2 @@
-# Chromatic
-live — https://kromatic.herokuapp.com
+# Kromatic
+View the site live — https://kromatick.herokuapp.com/
