@@ -1,1 +1,1 @@
-web: FLASK_APP=main.py FLASK_ENV=production flask run
+web: FLASK_APP=main.py FLASK_ENV=production flask run --port 443
