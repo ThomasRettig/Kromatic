@@ -59,9 +59,9 @@
 }
 
 body {
-  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 50%), hsl(196, 72%, 49%), hsl(165, 71%, 40%));
+  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 50%), hsl(190, 72%, 49%), hsl(165, 71%, 45%));
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 20s ease infinite;
   font-family: "Inter var", var(--fallback-fonts);
   letter-spacing: var(--base-letter-spacing);
   margin: 5vw;
@@ -178,7 +178,7 @@ img {
   header {
       margin-bottom: 30px;
   }
-  
+
   input[type="text"] {
     width: 100%;
   }
@@ -221,7 +221,7 @@ img {
   figure {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+    column-gap: clamp(15px, 10vw, 20px);
   }
 
   h1 {
@@ -235,8 +235,18 @@ img {
     row-gap: 10px;
   }
 
+  .grid-one-two {
+    grid-template-columns: 1fr 2fr;
+  }
+
   .big {
-    font-feature-settings: "cv06";
     font-size: clamp(40px, 10vw, 45px);
+  }
+}
+
+@media screen and (prefers-reduced-motion) {
+  body {
+    animation: none;
+    background: hsl(336, 78%, 40%);
   }
 }
