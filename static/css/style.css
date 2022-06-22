@@ -1,14 +1,32 @@
 :root {
   --base-letter-spacing: -0.05px;
+  --blue: hsl(203, 100%, 35%);
+  --fallback-fonts: "Inter", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Inter var";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/Inter-roman.var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "InterDisplay var";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://rsms.me/inter/font-files/InterDisplay-roman.var.woff2") format("woff2");
 }
 
 ::selection {
-  background-color: hsl(203, 100%, 35%);
+  background-color: var(--blue);
   color: hsl(203, 100%, 97%);
 }
 
 body {
-  font-family: "Inter var", system-ui, sans-serif;
+  font-family: "Inter var", var(--fallback-fonts);
   letter-spacing: var(--base-letter-spacing);
   margin: 5vw;
 }
@@ -22,23 +40,35 @@ p:not(:last-child, .label) {
 }
 
 h1 {
+  font-family: "InterDisplay var", "Inter Display", var(--fallback-fonts);
   font-variation-settings: "wght" 700;
   margin: 0;
-  letter-spacing: calc(var(--base-letter-spacing) * 10);
+  letter-spacing: calc(var(--base-letter-spacing) * 5);
+  line-height: 1;
 }
 
 h2 {
   font-variation-settings: "wght" 550;
-  letter-spacing: calc(var(--base-letter-spacing) * 7);
+  letter-spacing: calc(var(--base-letter-spacing) * 2.5);
 }
 
 a {
+  align-items: center;
   color: inherit;
+  font-variation-settings: "wght" 600;
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--blue);
+}
+
 svg {
-    transform: scale(0.7);
+  zoom: 0.65;
+}
+
+svg:hover {
+  fill: var(--blue);
 }
 
 button, input {
@@ -76,7 +106,7 @@ input[type="submit"]:hover {
 }
 
 input[type="submit"]:focus {
-  background-color: hsl(203, 100%, 35%);
+  background-color: var(--blue);
   color: white;
 }
 
@@ -84,12 +114,6 @@ label, .label {
   color: #666;
   font-variation-settings: "wght" 500;
   user-select: none;
-}
-
-figure {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
 }
 
 form {
@@ -105,7 +129,6 @@ form > div {
   column-gap: 10px;
   display: flex;
   margin-top: 5px;
-  width: fit-content;
 }
 
 img {
@@ -115,10 +138,16 @@ img {
 .faux-link {
   all: unset;
   cursor: pointer;
+  color: var(--blue);
+  font-variation-settings: "wght" 650;
   margin-top: 5px;
 }
 
-@media screen and (max-width: 749px) {
+.label {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 849px) {
   input[type="text"] {
     width: 100%;
   }
@@ -127,27 +156,56 @@ img {
     flex-wrap: wrap;
     row-gap: 10px;
   }
+
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 10px;
+  }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 850px) {
   body {
     align-items: center;
     align-content: center;
     column-gap: clamp(15px, 10vw, 35px);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     min-height: 100vh;
     margin: 0 auto;
-    width: 115vmin;
+    width: 160vmin;
   }
 
   h1, header > p, a {
     text-align: right;
   }
 
+  a {
+    column-gap: 5px;
+    display: flex;
+    justify-content: end;
+  }
+
+  figure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+
+  h1 {
+    letter-spacing: calc(var(--base-letter-spacing) * 10);
+    font-size: 35px;
+  }
+
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
   .big {
     font-feature-settings: "cv06";
     font-size: clamp(40px, 10vw, 45px);
-    letter-spacing: calc(var(--base-letter-spacing) * 25);
   }
 }
