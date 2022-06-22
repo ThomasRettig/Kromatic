@@ -1,1 +1,1 @@
-web: FLASK_APP=main.py FLASK_ENV=production flask run --port 443
+web: pip install -r requirements.txt && FLASK_APP=main.py FLASK_ENV=production flask run --port 443
