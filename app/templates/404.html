@@ -30,10 +30,17 @@
   </head>
   <body class="grid-one-two error-page">
     <h1 class="big">404</h1>
+
     <div>
       <p>Sorry about that. <span id="pageName"></span></p>
       <p class="mt-10"><a href="..">← Go back to the homepage</a></p>
     </div>
+
+    <footer>
+      <p><a href="https://github.com/ThomasRettig/Kromatic" target="_blank">View on Github</a></p>
+    </footer>
+
+    <!--Javascript-->
     <script>
       let path = window.location.pathname;
       let page = path.split("/").pop();

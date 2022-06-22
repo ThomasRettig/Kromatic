@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body class="center gradient">
+
   <header>
     <h1 class="big">Colourise</h1>
     <p>Colourise your pictures using AI!</p>
   </header>
+
   <main>
     <form action="." method="POST">
       <label for="url">Your image URL:</label>
@@ -27,6 +29,11 @@
       <button id="exampleButton" class="faux-link">Or try an example image →</button>
     </form>
   </main>
+
+  <footer>
+    <p><a href="https://github.com/ThomasRettig/Kromatic" target="_blank">View on Github</a></p>
+  </footer>
+  
   <!--Javascript-->
   <script>
     const exampleButton = document.getElementById("exampleButton");

@@ -159,6 +159,13 @@ img {
   max-width: 100%;
 }
 
+footer > p > a {
+  bottom: 15px;
+  left: 15px;
+  position: absolute;
+  text-align: left;
+}
+
 /* a modest smattering of utility classes */
 
 .faux-link {
