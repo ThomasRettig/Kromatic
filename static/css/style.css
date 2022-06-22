@@ -35,10 +35,6 @@
   }
 }
 
-* {
-  color: white;
-}
-
 ::-webkit-scrollbar {
   background: #fff;
   border-radius: 5px;
@@ -58,10 +54,11 @@
     background-clip: content-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 50%), hsl(190, 72%, 49%), hsl(165, 71%, 45%));
-  background-size: 400% 400%;
-  animation: gradient 20s ease infinite;
   font-family: "Inter var", var(--fallback-fonts);
   letter-spacing: var(--base-letter-spacing);
   margin: 5vw;
@@ -163,6 +160,8 @@ img {
   max-width: 100%;
 }
 
+/* a modest smattering of utility classes */
+
 .faux-link {
   all: unset;
   cursor: pointer;
@@ -173,6 +172,22 @@ img {
 .label {
   margin-bottom: 5px;
 }
+
+.gradient {
+  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 50%), hsl(190, 72%, 49%), hsl(165, 71%, 45%));
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+}
+
+.gradient * {
+  color: white;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+/* media queries */
 
 @media screen and (max-width: 849px) {
   header {
@@ -194,6 +209,15 @@ img {
     row-gap: 10px;
     margin-bottom: 10px;
   }
+
+  .error-page {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    min-height: 100vh;
+    margin: 0 40px;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 850px) {
@@ -212,7 +236,7 @@ img {
     text-align: right;
   }
 
-  a {
+  .link-right {
     column-gap: 5px;
     display: flex;
     justify-content: end;
@@ -245,8 +269,8 @@ img {
 }
 
 @media screen and (prefers-reduced-motion) {
-  body {
+  .gradient {
     animation: none;
-    background: hsl(336, 78%, 40%);
+    background: hsl(336, 78%, 40%); /* prevent any flashy animation */
   }
 }
