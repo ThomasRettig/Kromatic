@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+      <title>500 Internal Server Error</title>
+      <link rel="preload" href="https://rsms.me/inter/font-files/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="https://rsms.me/inter/font-files/InterDisplay-roman.var.woff2" as="font" type="font/woff2" crossorigin>
+      <!-- CSS  -->
+      <style>
+        * {
+          color: white;
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        h1::after {
+          content: "";
+          border-right: 1px solid #666;
+          position: relative;
+          left: 18px;
+        }
+      </style>
+      <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body class="grid-one-two error-page">
+    <h1 class="big">500</h1>
+    <div>
+      <p>Sorry about that. <span id="pageName"></span></p>
+      <p class="mt-10"><a href="..">← Go back to the homepage</a></p>
+    </div>
+    <script>
+      let path = window.location.pathname;
+      let page = path.split("/").pop();
+
+      document.getElementById("pageName").innerText = `The page “/${page}” could not be found on our server.`;
+    </script>
+  </body>
+</html>
