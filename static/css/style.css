@@ -20,7 +20,48 @@
   src: url("https://rsms.me/inter/font-files/InterDisplay-roman.var.woff2") format("woff2");
 }
 
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  color: white;
+}
+
+::-webkit-scrollbar {
+  background: #fff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border: 3.5px solid transparent;
+  border-radius: 100px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888888;
+    border: 3.5px solid transparent;
+    border-radius: 100px;
+    background-clip: content-box;
+}
+
 body {
+  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 50%), hsl(196, 72%, 49%), hsl(165, 71%, 40%));
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   font-family: "Inter var", var(--fallback-fonts);
   letter-spacing: var(--base-letter-spacing);
   margin: 5vw;
@@ -35,14 +76,11 @@ p:not(:last-child, .label) {
 }
 
 h1 {
-  background: linear-gradient(12deg, #006eb3, #0085b0, #009dae, #00b4ac, #00ccaa);
   font-family: "InterDisplay var", "Inter Display", var(--fallback-fonts);
   font-variation-settings: "wght" 700;
   margin: 0;
   letter-spacing: calc(var(--base-letter-spacing) * 5);
   line-height: 1;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -58,19 +96,16 @@ a {
 }
 
 a:hover {
-  color: var(--blue);
+  opacity: 0.8;
 }
 
 svg {
   zoom: 0.65;
-}
-
-svg:hover {
-  fill: var(--blue);
+  fill: white;
 }
 
 button, input {
-  outline: 1.5px solid #ccc;
+  outline: 1.5px solid hsla(0, 100%, 100%, 40%);
   border: none;
   border-radius: 5px;
   font: inherit;
@@ -79,38 +114,33 @@ button, input {
 }
 
 :is(button, input):focus{
-  box-shadow: 0 0 0 4px hsla(203, 80%, 46%, 0.4);
-  outline: 2px solid hsla(203, 80%, 46%, 0.3);
+  box-shadow: 0 0 0 4px hsla(0, 100%, 100%, 40%);
+  outline: 2px solid hsla(0, 80%, 100%, 30%);
   border-radius: 2px;
 }
 
 input[type="text"] {
-  background-color: hsl(0, 0%, 97%);
+  background-color: hsla(0, 0%, 97%, 20%);
   display: block;
 }
 
 input[type="text"]::placeholder {
-  color: #666;
+  color: white;
   user-select: none;
 }
 
 input[type="submit"] {
-  background-color: hsl(0, 0%, 90%);
+  background-color: hsla(0, 0%, 90%, 0.2);
   cursor: pointer;
 }
 
 input[type="submit"]:hover {
-  background-color: hsl(0, 0%, 87%);
-}
-
-input[type="submit"]:focus {
-  background-color: var(--blue);
-  color: white;
+  background-color: hsla(0, 0%, 90%, 0.4);
 }
 
 label, .label {
-  color: #666;
   font-variation-settings: "wght" 500;
+  opacity: 0.7;
   user-select: none;
 }
 
@@ -136,7 +166,6 @@ img {
 .faux-link {
   all: unset;
   cursor: pointer;
-  color: var(--blue);
   font-variation-settings: "wght" 650;
   margin-top: 5px;
 }
@@ -146,6 +175,10 @@ img {
 }
 
 @media screen and (max-width: 849px) {
+  header {
+      margin-bottom: 30px;
+  }
+  
   input[type="text"] {
     width: 100%;
   }

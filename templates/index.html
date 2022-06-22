@@ -33,7 +33,11 @@
     exampleButton.addEventListener("click", () => {
       url.value = exampleImage;
       document.forms[0].submit();
-    })
+    });
+
+    function get_url_extension(url) {
+      return url.split(/[#?]/)[0].split('.').pop().trim();
+    }
   </script>
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"></script>
   <script src="/static/js/init.js"></script>
