@@ -20,11 +20,6 @@
   src: url("https://rsms.me/inter/font-files/InterDisplay-roman.var.woff2") format("woff2");
 }
 
-::selection {
-  background-color: var(--blue);
-  color: hsl(203, 100%, 97%);
-}
-
 body {
   font-family: "Inter var", var(--fallback-fonts);
   letter-spacing: var(--base-letter-spacing);
@@ -40,11 +35,14 @@ p:not(:last-child, .label) {
 }
 
 h1 {
+  background: linear-gradient(12deg, #006eb3, #0085b0, #009dae, #00b4ac, #00ccaa);
   font-family: "InterDisplay var", "Inter Display", var(--fallback-fonts);
   font-variation-settings: "wght" 700;
   margin: 0;
   letter-spacing: calc(var(--base-letter-spacing) * 5);
   line-height: 1;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
