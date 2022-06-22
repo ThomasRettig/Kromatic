@@ -1,6 +1,5 @@
 :root {
   --base-letter-spacing: -0.05px;
-  --blue: hsl(203, 100%, 35%);
   --fallback-fonts: "Inter", system-ui, sans-serif;
 }
 
@@ -101,7 +100,7 @@ svg {
   fill: white;
 }
 
-button, input {
+button, input, .faux-button {
   outline: 1.5px solid hsla(0, 100%, 100%, 40%);
   border: none;
   border-radius: 5px;
@@ -110,7 +109,7 @@ button, input {
   transition: 0.1s;
 }
 
-:is(button, input):focus{
+:is(button, input, .faux-button):focus{
   box-shadow: 0 0 0 4px hsla(0, 100%, 100%, 40%);
   outline: 2px solid hsla(0, 80%, 100%, 30%);
   border-radius: 2px;
@@ -169,12 +168,16 @@ img {
   margin-top: 5px;
 }
 
+.faux-button {
+  background-color: hsla(0, 0%, 97%, 20%);
+}
+
 .label {
   margin-bottom: 5px;
 }
 
 .gradient {
-  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 50%), hsl(190, 72%, 49%), hsl(165, 71%, 45%));
+  background: linear-gradient(-45deg, hsl(14, 82%, 63%), hsl(336, 78%, 45%), hsl(190, 50%, 49%), hsl(165, 71%, 45%));
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
 }
@@ -204,6 +207,7 @@ img {
   }
 
   .success-message {
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     row-gap: 10px;

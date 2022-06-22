@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
   <title>Coulourise</title>
+  <!--Icons-->
+  <link rel="icon" href="/static/icons/favicon.png">
+  <!--Resource hints-->
   <link rel="preload" href="https://rsms.me/inter/font-files/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://rsms.me/inter/font-files/InterDisplay-roman.var.woff2" as="font" type="font/woff2" crossorigin>
   <!-- CSS  -->
@@ -18,28 +21,22 @@
     <form action="." method="POST">
       <label for="url">Your image URL:</label>
       <div>
-        <input type="text" id="url" name="url" placeholder="https://test.com/image.png/" spellcheck="false" required>
+        <input type="text" id="url" name="url" placeholder="https://test.com/image.png" spellcheck="false" required>
         <input type="submit" value="Colourise!">
       </div>
-      <button id="exampleButton" class="faux-link">Or try an example →</button>
+      <button id="exampleButton" class="faux-link">Or try an example image →</button>
     </form>
   </main>
   <!--Javascript-->
   <script>
     const exampleButton = document.getElementById("exampleButton");
     const url = document.getElementById("url");
-    let exampleImage = "https://images.pexels.com/photos/57905/pexels-photo-57905.jpeg";
+    let exampleImage = "https://images.unsplash.com/photo-1597871040916-4b4c20ba08dd";
 
     exampleButton.addEventListener("click", () => {
       url.value = exampleImage;
       document.forms[0].submit();
     });
-
-    function get_url_extension(url) {
-      return url.split(/[#?]/)[0].split('.').pop().trim();
-    }
   </script>
-  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"></script>
-  <script src="/static/js/init.js"></script>
 </body>
 </html>
