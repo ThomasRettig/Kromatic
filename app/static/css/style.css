@@ -101,7 +101,7 @@ svg {
 }
 
 button, input, .faux-button {
-  -webkit-appearance: button;
+  -webkit-appearance: none;
   outline: 1.5px solid hsla(0, 100%, 100%, 40%);
   border: none;
   border-radius: 5px;
