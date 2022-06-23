@@ -86,13 +86,13 @@ h2 {
 
 a {
   align-items: center;
-  color: inherit;
-  font-variation-settings: "wght" 600;
+  font-variation-settings: "wght" 500;
   text-decoration: none;
 }
 
 a:hover {
   opacity: 0.8;
+  text-decoration: underline;
 }
 
 svg {
@@ -166,12 +166,47 @@ footer > p > a {
   text-align: left;
 }
 
+/* ==========================================================================
+   Attribute selectors
+   ========================================================================== */
+
+/* red*/
+
+[data-color="red"] {
+  background-color: hsl(20deg 40% 30%);
+}
+
+[data-color="red"] p, [data-color="red"] p > span {
+  color: hsl(20deg 40% 85%);
+}
+
+/* blue */
+
+[data-color="blue"] {
+  background-color: hsl(208deg 40% 20%);
+}
+
+[data-color="blue"] p, [data-color="blue"] p > span {
+  color: hsl(208deg 40% 85%);
+}
+
+/* green */
+
+[data-color="green"] {
+  background-color: hsl(122deg 68% 9%);
+}
+
+[data-color="green"] p, [data-color="green"] p > span {
+  color: hsl(122deg 40% 90%);
+}
+
 /* a modest smattering of utility classes */
 
 .faux-link {
   all: unset;
   cursor: pointer;
   font-variation-settings: "wght" 650;
+  text-decoration: none;
   margin-top: 5px;
 }
 

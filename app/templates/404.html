@@ -28,11 +28,11 @@
       </style>
       <link rel="stylesheet" href="/static/css/style.css">
   </head>
-  <body class="grid-one-two error-page">
+  <body class="grid-one-two error-page" data-color="{{ colour }}">
     <h1 class="big">404</h1>
 
     <div>
-      <p>Sorry about that. <span id="pageName"></span></p>
+      <p>Sorry about that. <span id="pageName"></span> If you think this was an error, please <a href="https://github.com/ThomasRettig/Kromatic/issues/new" target="_blank">open a new issue on Github.</p>
       <p class="mt-10"><a href="..">← Go back to the homepage</a></p>
     </div>
 
@@ -43,9 +43,8 @@
     <!--Javascript-->
     <script>
       let path = window.location.pathname;
-      let page = path.split("/").pop();
 
-      document.getElementById("pageName").innerText = `The page “/${page}” could not be found on our server.`;
+      document.getElementById("pageName").innerText = `The page “${path}” could not be found on our server.`;
     </script>
   </body>
 </html>
